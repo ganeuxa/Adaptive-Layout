@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="style/styles.css">
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
+  <!-- Skip-link для доступности -->
+  <a href="#main-content" class="skip-link visually-hidden focusable">Перейти к основному содержимому</a>
+
   <div class="page-container">
     <!-- Header -->
     <header class="bg-primary text-white py-4">
@@ -77,20 +80,22 @@
     </section>
 
     <!-- Main Content -->
-    <main class="container my-5 flex-grow-1">
+    <main id="main-content" class="container my-5 flex-grow-1">
       <!-- Profile Card -->
       <section class="mb-5">
         <div class="card shadow-sm">
           <div class="card-body p-4">
             <div class="row align-items-center">
               <div class="col-md-3 text-center mb-3 mb-md-0">
+                <!-- Изображение с width/height и lazy loading -->
                 <img
                   src="images/Scout.jpg"
-                  alt="Фото автора"
-                  class="img-fluid rounded-circle border border-primary border-2"
-                  style="width: 150px; height: 150px; object-fit: cover;"
+                  srcset="images/Scout-small.webp 400w, images/Scout-large.webp 800w"
+                  sizes="(max-width: 600px) 150px, (max-width: 992px) 120px, 150px"
                   width="150"
                   height="150"
+                  alt="Фото Иващенко Алексея Александровича"
+                  class="img-fluid rounded-circle border border-primary border-2"
                   loading="lazy"
                 >
               </div>
