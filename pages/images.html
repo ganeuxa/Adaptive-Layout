@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Изображения — Портфолио</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../style/styles.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+  <!-- Skip-link для доступности -->
+  <a href="#main-content" class="skip-link visually-hidden focusable">Перейти к основному содержимому</a>
+
+  <div class="page-container">
+    <!-- Header -->
+    <header class="bg-primary text-white py-4">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col">
+            <h1 class="h3 mb-1">Портфолио студента</h1>
+            <p class="mb-0 opacity-75">Иващенко Алексей Александрович</p>
+          </div>
+          <div class="col-auto">
+            <span class="badge bg-light text-primary">ЭФБО-07-24</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">
+                <i class="bi bi-person me-1"></i> О себе
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">
+                <i class="bi bi-code-slash me-1"></i> Проекты
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="diary.html">
+                <i class="bi bi-journal-bookmark me-1"></i> Дневник
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacts.html">
+                <i class="bi bi-envelope me-1"></i> Контакты
+              </a>
+            </li>
+            <!-- Новая ссылка для страницы "Изображения" -->
+            <li class="nav-item">
+              <a class="nav-link active" href="images.html">
+                <i class="bi bi-image me-1"></i> Изображения
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="container my-5 flex-grow-1">
+      <h1 class="mb-4">Адаптивные изображения</h1>
+
+      <!-- Секция 1: Базовое адаптивное изображение -->
+      <section class="technique-section mb-5">
+        <h2 class="section__title h4">1. Базовое адаптивное изображение</h2>
+        <div class="image-container p-3 bg-white border rounded shadow-sm">
+          <img
+            src="../images/landscape.jpg"
+            alt="Крутой мужик в арбузе! Будь как он"
+            class="responsive-image img-fluid"
+          >
+        </div>
+        <div class="explanation mt-3 p-3 bg-light border rounded">
+          <h3 class="h5">Что происходит:</h3>
+          <ul class="mb-0">
+            <li>Изображение занимает 100% ширины контейнера.</li>
+            <li>Высота автоматически рассчитывается для сохранения пропорций.</li>
+            <li>Работает на всех устройствах.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Секция 2: Picture element с разными версиями -->
+      <section class="technique-section mb-5">
+        <h2 class="section__title h4">2. Picture element с форматами</h2>
+        <div class="image-container p-3 bg-white border rounded shadow-sm">
+          <picture>
+            <!-- WebP для современных браузеров -->
+            <source type="image/webp" srcset="../images/portrait.webp">
+            <!-- JPEG для старых браузеров -->
+            <source type="image/jpeg" srcset="../images/portrait.jpg">
+            <!-- Фолбэк -->
+            <img src="../images/portrait.jpg" alt="Портрет человека" class="responsive-image img-fluid">
+          </picture>
+        </div>
+        <div class="explanation mt-3 p-3 bg-light border rounded">
+          <h3 class="h5">Что происходит:</h3>
+          <ul class="mb-0">
+            <li>Браузер выбирает лучший формат (WebP или JPEG).</li>
+            <li>Автоматическое переключение между форматами.</li>
+            <li>Фолбэк для старых браузеров.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Секция 3: Разные изображения для разных экранов -->
+      <section class="technique-section mb-5">
+        <h2 class="section__title h4">3. Разные изображения для разных экранов</h2>
+        <div class="image-container p-3 bg-white border rounded shadow-sm">
+          <picture>
+            <!-- Большое изображение для десктопов -->
+            <source media="(min-width: 1200px)" srcset="../images/wide-desktop.jpg">
+            <!-- Среднее для планшетов -->
+            <source media="(min-width: 768px)" srcset="../images/tablet.jpg">
+            <!-- Маленькое для мобильных -->
+            <img src="../images/mobile.jpg" alt="Адаптивное изображение для разных устройств" class="responsive-image img-fluid">
+          </picture>
+        </div>
+        <div class="explanation mt-3 p-3 bg-light border rounded">
+          <h3 class="h5">Что происходит:</h3>
+          <ul class="mb-0">
+            <li>Десктопы (1200px+): wide-desktop.jpg</li>
+            <li>Планшеты (768px-1199px): tablet.jpg</li>
+            <li>Мобильные (до 767px): mobile.jpg</li>
+            <li>Браузер сам выбирает подходящее изображение.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Секция 4: Поддержка Retina дисплеев -->
+      <section class="technique-section mb-5">
+        <h2 class="section__title h4">4. Поддержка Retina дисплеев</h2>
+        <div class="image-container p-3 bg-white border rounded shadow-sm text-center">
+          <img
+            src="../images/icon@1x.png"
+            srcset="../images/icon@1x.png 1x, ../images/icon@2x.png 2x"
+            alt="Иконка с поддержкой Retina"
+            class="retina-image img-fluid"
+            style="max-width: 100px; height: auto;"
+          >
+        </div>
+        <div class="explanation mt-3 p-3 bg-light border rounded">
+          <h3 class="h5">Что происходит:</h3>
+          <ul class="mb-0">
+            <li>Обычные экраны: icon@1x.png</li>
+            <li>Retina экраны: icon@2x.png (в 2 раза четче)</li>
+            <li>Автоматическое определение плотности пикселей.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Секция 5: Object-fit свойства -->
+      <section class="technique-section mb-5">
+        <h2 class="section__title h4">5. Object-fit свойства</h2>
+        <div class="object-fit-demo d-flex gap-3 justify-content-center flex-wrap">
+          <div class="object-fit-item text-center">
+            <img src="../images/square.jpg" alt="Cover пример" class="object-fit-cover img-fluid" style="height: 150px; object-fit: cover;">
+            <span class="d-block mt-2">object-fit: cover</span>
+          </div>
+          <div class="object-fit-item text-center">
+            <img src="../images/square.jpg" alt="Contain пример" class="object-fit-contain img-fluid" style="height: 150px; object-fit: contain; background: #f8f9fa;">
+            <span class="d-block mt-2">object-fit: contain</span>
+          </div>
+          <div class="object-fit-item text-center">
+            <img src="../images/square.jpg" alt="Fill пример" class="object-fit-fill img-fluid" style="height: 150px; object-fit: fill;">
+            <span class="d-block mt-2">object-fit: fill</span>
+          </div>
+        </div>
+        <div class="explanation mt-3 p-3 bg-light border rounded">
+          <h3 class="h5">Что происходит:</h3>
+          <ul class="mb-0">
+            <li><strong>cover</strong> — заполняет контейнер, обрезая края.</li>
+            <li><strong>contain</strong> — вписывает полностью, могут быть поля.</li>
+            <li><strong>fill</strong> — растягивает, искажая пропорции.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Секция 6: Адаптивная галерея -->
+      <section class="technique-section mb-5">
+        <h2 class="section__title h4">6. Адаптивная галерея (без обрезки)</h2>
+        <div class="gallery row g-3">
+          <div class="col-md-3 col-sm-6">
+            <div class="gallery__item bg-white border rounded shadow-sm overflow-hidden">
+              <img src="../images/gallery1.jpg" alt="Галерея 1 - Мужчина в костюме №1" class="gallery__image w-100" style="height: 200px; object-fit: cover;">
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="gallery__item bg-white border rounded shadow-sm overflow-hidden">
+              <img src="../images/gallery2.jpg" alt="Галерея 2 - Мужчина в костюме №2" class="gallery__image w-100" style="height: 200px; object-fit: cover;">
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="gallery__item bg-white border rounded shadow-sm overflow-hidden">
+              <img src="../images/gallery3.jpg" alt="Галерея 3 - Мужчина в костюме №3" class="gallery__image w-100" style="height: 200px; object-fit: cover;">
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="gallery__item bg-white border rounded shadow-sm overflow-hidden">
+              <img src="../images/gallery4.jpg" alt="Галерея 4 - Мужчина в костюме №4" class="gallery__image w-100" style="height: 200px; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+        <div class="explanation mt-3 p-3 bg-light border rounded">
+          <h3 class="h5">Что происходит:</h3>
+          <ul class="mb-0">
+            <li><strong>На десктопах:</strong> 4 изображения в ряд, пропорциональное масштабирование.</li>
+            <li><strong>На мобильных:</strong> 1 изображение в ряд, полная видимость.</li>
+            <li><strong>Особенности:</strong> Никакой обрезки, плавное масштабирование, сохранение пропорций.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+      <div class="container text-center">
+        <p class="mb-0">&copy; 2025 Портфолио студента. Все права защищены.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
